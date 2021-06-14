@@ -1,0 +1,25 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "Notes app created for learning nodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuklasaharsh/Notes-App.git"
+  },
+  "keywords": [
+    "Learning"
+  ],
+  "author": "Saharsh Shukla <saharsh.shukla2018@vitstudent.ac.in>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shuklasaharsh/Notes-App/issues"
+  },
+  "homepage": "https://github.com/shuklasaharsh/Notes-App#readme",
+  "dependencies": {
+    "validator": "^10.8.0"
+  }
+}

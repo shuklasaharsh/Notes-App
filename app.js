@@ -37,10 +37,4 @@ console.log(notes())*/
 
 // Challenge Completed successfully - dated: 14th June, 21:40
 
-
-
-
-
-
-
-
+console.log("App.js")
