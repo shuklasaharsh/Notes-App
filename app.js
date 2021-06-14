@@ -38,3 +38,7 @@ console.log(notes())*/
 // Challenge Completed successfully - dated: 14th June, 21:40
 
 console.log("App.js")
+const validator = require('validator')
+
+console.log(validator.isEmail('Example.com'))
+console.log(validator.isURL('https://www.github.com'))
