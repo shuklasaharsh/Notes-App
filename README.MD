@@ -1,7 +1,8 @@
 # Notes-App using NODEJS
 
 ```diff
-! This repository is a part of a course involving NodeJS, MongoDB, ExpressJS for backend developement.
+! This repository is a part of a course involving NodeJS, 
+! MongoDB, ExpressJS for backend developement.
 ```
 
 - To run:
