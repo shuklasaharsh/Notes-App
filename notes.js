@@ -1,20 +1,35 @@
 const fs = require('fs')
-const chalk = require('chalk')
+require('chalk');
+let loadNotes;
+loadNotes = function () {
+    try {
+        const data = fs.readFileSync('notes.json')
+        const dataJSON = data.toString()
+        return JSON.parse(dataJSON)
 
-let getNotes;
-getNotes = function () {
-    const data = process.argv
-    return "You notes Are: " + data[2]
-};
+    } catch (e) {
+        return []
+    }
+}
 
-let appendNotes;
-appendNotes = function () {
-    fs.appendFileSync('./notes.txt', "\n" + process.argv[3])
-    console.log(chalk.bgGreen.bold("Successful"))
-    return 1
-};
+let addNotes;
+addNotes = function (title, body) {
+    const notes = loadNotes()
+    notes.push({
+        title: title,
+        body: body
+    })
+    saveNotes(notes)
+}
+
+let saveNotes;
+saveNotes = function (notes) {
+    const dataJSON = JSON.stringify(notes)
+    fs.writeFileSync('notes.json', dataJSON)
+}
 
 module.exports = {
-    getNotes,
-    appendNotes
+    addNotes: addNotes,
+    saveNotes: saveNotes,
+    loadNotes: loadNotes
 }
