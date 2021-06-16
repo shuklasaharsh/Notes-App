@@ -47,8 +47,20 @@ console.log(validator.isURL('https://www.github.com'))
 console.log(chalk.bold.green.inverse("Successfully Downloaded Chalk2.4.1"))
 
 */
-const notes = require('./notes')
 const chalk = require('chalk')
+const yargs = require('yargs')
+const notes = require('./notes')
+//Commands
+// Add
+
+yargs.command({
+    command: 'add',
+    describe: 'Add a new note',
+    handler: function () {
+        console.log('Adding a new note')
+    }
+})
+
 
 let getCommand;
 getCommand = function () {
@@ -63,5 +75,8 @@ checkCondition = function () {
         console.log(chalk.red.bold("Exit with Status -1"))
     }
 };
-console.log(getCommand())
-checkCondition()
+/*console.log(getCommand())
+checkCondition()*/
+
+console.log(yargs.argv)
+// console.log(process.argv)
