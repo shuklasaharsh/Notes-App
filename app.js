@@ -18,7 +18,7 @@ yargs.command({
             type: 'string'
         }
     },
-    handler: function (argv) {
+    handler(argv) {
         notes.addNotes(argv.title, argv.body)
     }
 })
@@ -27,8 +27,15 @@ yargs.command({
 yargs.command({
     command: 'remove',
     describe: 'Remove notes',
-    handler: function () {
-        console.log('Removing')
+    builder: {
+        title: {
+            describe: "The Title of the note to be removed",
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler(argv) {
+        notes.removeNotes(argv.title)
     }
 })
 
@@ -37,8 +44,15 @@ yargs.command({
 yargs.command({
     command: 'read',
     describe: 'Gets all Notes',
-    handler: function () {
-        console.log('Reading')
+    builder: {
+        title: {
+            describe: "The title of the note to be printed",
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler(argv) {
+        notes.readNote(argv.title)
     }
 })
 
@@ -47,8 +61,8 @@ yargs.command({
 yargs.command({
     command: 'list',
     describe: 'Lists all notes',
-    handler: function () {
-        console.log('Listing')
+    handler() {
+        notes.listNotes()
     }
 })
 
