@@ -5,5 +5,5 @@
 - To run:
 
 ```bash
-$ node app.js
+node app.js --help
 ```
