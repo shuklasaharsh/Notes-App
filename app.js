@@ -36,6 +36,7 @@ console.log(add(2,3))*/
 console.log(notes())*/
 
 // Challenge Completed successfully - dated: 14th June, 21:40
+/*
 const chalk = require('chalk')
 console.log("App.js")
 const validator = require('validator')
@@ -44,3 +45,23 @@ console.log(validator.isEmail('Example.com'))
 console.log(validator.isURL('https://www.github.com'))
 
 console.log(chalk.bold.green.inverse("Successfully Downloaded Chalk2.4.1"))
+
+*/
+const notes = require('./notes')
+const chalk = require('chalk')
+
+let getCommand;
+getCommand = function () {
+    return process.argv[2]
+};
+
+let checkCondition;
+checkCondition = function () {
+    if (getCommand() === "add") {
+        notes.appendNotes()
+    } else {
+        console.log(chalk.red.bold("Exit with Status -1"))
+    }
+};
+console.log(getCommand())
+checkCondition()
